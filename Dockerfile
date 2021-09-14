@@ -16,9 +16,9 @@ LABEL summary="$SUMMARY" \
       name="$PRODNAME/$COMPNAME" \
       version="12.0.1.0-r3"
 
-COPY MQDemo /home/aceuser/MQDemo
+COPY NewOrdersService /home/aceuser/NewOrdersService
 RUN mkdir /home/aceuser/bars && \
         source /opt/ibm/ace-12/server/bin/mqsiprofile && \
-        /opt/ibm/ace-12/server/bin/mqsipackagebar -a bars/MQDemo.bar -k MQDemo && \
+        /opt/ibm/ace-12/server/bin/mqsipackagebar -a bars/NewOrdersService.bar -k NewOrdersService && \
         ace_compile_bars.sh && \
-        chmod -R 777 /home/aceuser/ace-server/run/MQDemo
+        chmod -R 777 /home/aceuser/ace-server/run/NewOrdersService
