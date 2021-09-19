@@ -1,4 +1,5 @@
-FROM quay.io/raljohani/ace-developer:12.0.1.0-r3
+#FROM quay.io/raljohani/ace-developer:12.0.1.0-r3
+FROM icr.io/appc-dev/ace-server@sha256:0a343dc13136a2ea02fbfdf183eada88c60df254acff9bcf8373484038c93ce9
 
 ENV SUMMARY="Integration Server for App Connect Enterprise" \
     DESCRIPTION="Integration Server for App Connect Enterprise" \
