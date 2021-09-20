@@ -4,7 +4,7 @@
             
             Set OutputRoot.JSON.Data.accountid = InputRoot.JSON.Data.accountid;
             Set OutputRoot.JSON.Data.orderid = SUBSTRING(CAST(CURRENT_TIMESTAMP AS CHARACTER) AFTER '.' FOR 6);
-         
+        
             RETURN TRUE;
         END;
         CREATE PROCEDURE CopyMessageHeaders() BEGIN
