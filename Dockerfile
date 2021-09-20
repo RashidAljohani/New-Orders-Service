@@ -1,5 +1,6 @@
 FROM quay.io/raljohani/ace-developer:12.0.1.0-r3
 
+
 ENV SUMMARY="Integration Server for App Connect Enterprise" \
     DESCRIPTION="Integration Server for App Connect Enterprise" \
     PRODNAME="AppConnectEnterprise" \
