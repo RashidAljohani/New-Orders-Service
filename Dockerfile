@@ -17,8 +17,13 @@ LABEL summary="$SUMMARY" \
       version="12.0.3.0-r1"
       
 COPY NewOrdersService /home/aceuser/NewOrdersService
-RUN mkdir /home/aceuser/initial-config/bars && \
+RUN mkdir /home/aceuser/bars && \
         source /opt/ibm/ace-12/server/bin/mqsiprofile && \
-        /opt/ibm/ace-12/server/bin/mqsipackagebar -a initial-config/bars/NewOrdersService.bar -k NewOrdersService && \
+        /opt/ibm/ace-12/server/bin/mqsipackagebar -a bars/NewOrdersService.bar -k NewOrdersService && \
         ace_compile_bars.sh && \
-        chmod -R 777 /home/aceuser/initial-config/bars
+        mv -v bars /home/aceuser/initial-config/bars        
+USER 0
+RUN chmod -R 777 /home/aceuser/initial-config/bars && \
+    chmod -R 777 /home/aceuser/ace-server/run/NewOrdersService
+    
+USER aceuser
