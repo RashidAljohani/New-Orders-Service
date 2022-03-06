@@ -15,10 +15,10 @@ LABEL summary="$SUMMARY" \
       com.redhat.component="$PRODNAME-$COMPNAME" \
       name="$PRODNAME/$COMPNAME" \
       version="12.0.3.0-r1"
-
+      
 COPY NewOrdersService /home/aceuser/NewOrdersService
-RUN mkdir /home/aceuser/bars && \
+RUN mkdir /home/aceuser/initial-config/bars && \
         source /opt/ibm/ace-12/server/bin/mqsiprofile && \
-        /opt/ibm/ace-12/server/bin/mqsipackagebar -a bars/NewOrdersService.bar -k NewOrdersService && \
+        /opt/ibm/ace-12/server/bin/mqsipackagebar -a initial-config/bars/NewOrdersService.bar -k NewOrdersService && \
         ace_compile_bars.sh && \
-        chmod -R 777 /home/aceuser/ace-server/run/NewOrdersService
+        chmod -R 777 /home/aceuser/initial-config/bars
