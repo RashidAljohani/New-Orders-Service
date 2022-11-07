@@ -62,9 +62,6 @@
         "orderId" : {
           "type" : "string"
         },
-        "status" : {
-          "type" : "string"
-        },
         "accountId" : {
           "type" : "string"
         }
