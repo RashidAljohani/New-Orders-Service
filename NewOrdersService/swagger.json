@@ -11,7 +11,10 @@
         "operationId" : "postPut",
         "responses" : {
           "200" : {
-            "description" : "The operation was successful."
+            "description" : "The operation was successful.",
+            "schema" : {
+              "$ref" : "#/definitions/response"
+            }
           }
         },
         "consumes" : [ "application/json" ],
@@ -21,7 +24,7 @@
           "name" : "body",
           "in" : "body",
           "schema" : {
-            "type" : "string"
+            "$ref" : "#/definitions/event"
           },
           "description" : "The request body for the operation",
           "required" : true
@@ -29,5 +32,43 @@
       }
     }
   },
-  "basePath" : "/newordersservice/v1"
+  "basePath" : "/newordersservice/v1",
+  "definitions" : {
+    "event" : {
+      "type" : "object",
+      "properties" : {
+        "accountId" : {
+          "type" : "string"
+        },
+        "quantity" : {
+          "type" : "integer"
+        },
+        "location" : {
+          "type" : "object",
+          "properties" : {
+            "source" : {
+              "type" : "string"
+            },
+            "destination" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    },
+    "response" : {
+      "type" : "object",
+      "properties" : {
+        "orderId" : {
+          "type" : "string"
+        },
+        "status" : {
+          "type" : "string"
+        },
+        "accountId" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
 }
