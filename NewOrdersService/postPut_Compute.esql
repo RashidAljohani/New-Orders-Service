@@ -3,10 +3,7 @@
         BEGIN
          
             Set OutputRoot.JSON.Data.accountId = InputRoot.JSON.Data.accountId;
-            Set OutputRoot.JSON.Data.orderId = SUBSTRING(CAST(CURRENT_TIMESTAMP AS CHARACTER) AFTER '.' FOR 6);
-           	Set OutputRoot.JSON.Data.mss = "hello, world";
-            	
-        
+            Set OutputRoot.JSON.Data.orderId = SUBSTRING(CAST(CURRENT_TIMESTAMP AS CHARACTER) AFTER '.' FOR 6);            	
             RETURN TRUE;
         END;
     END MODULE;

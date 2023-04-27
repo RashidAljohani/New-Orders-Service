@@ -18,7 +18,7 @@
       <nodes xmi:type="ComIbmHTTPHeader.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_2" location="251,75" httpInputHeader="DeleteHeader">
         <translation xmi:type="utility:ConstantString" string="HTTP Header"/>
       </nodes>
-      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="375,18" queueName="MVP.FROM.ACE.Q" connection="CLIENT" destinationQueueManagerName="QM1" queueManagerHostname="qm-lite-ibm-mq.fab-mvp.svc.cluster.local" listenerPortNumber="1414" channelName="MVP.APP.SVRCONN">
+      <nodes xmi:type="ComIbmMQOutput.msgnode:FCMComposite_1" xmi:id="FCMComposite_1_4" location="375,18" queueName="APP.QUEUE" connection="CLIENT" destinationQueueManagerName="QM1" queueManagerHostname="qm1-ibm-mq.demo-01.svc" listenerPortNumber="1414" channelName="MVP.APP.SVRCONN">
         <translation xmi:type="utility:ConstantString" string="MQ Output"/>
       </nodes>
       <connections xmi:type="eflow:FCMConnection" xmi:id="FCMConnection_1" targetNode="FCMComposite_1_1" sourceNode="InTerminal.Input_1" sourceTerminalName="OutTerminal.out" targetTerminalName="InTerminal.in"/>

@@ -38,7 +38,8 @@
       "type" : "object",
       "properties" : {
         "accountId" : {
-          "type" : "string"
+          "type" : "object",
+          "properties" : { }
         },
         "quantity" : {
           "type" : "integer"
@@ -53,6 +54,9 @@
               "type" : "string"
             }
           }
+        },
+        "product" : {
+          "type" : "string"
         }
       }
     },
